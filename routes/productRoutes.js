@@ -1,23 +1,10 @@
 import express from 'express';
-import products from '../data/products.js';
+import { getProductByid, getProducts } from '../controller/productController.js';
 
 const productRouter = express.Router();
 
-const productDatas = products;
-
-productRouter.get('/', (req, res) => {
-	res.json({
-		'data': productDatas
-	});
-});
-
-productRouter.get('/:id', (req, res) => {
-	const { id } = req.params;
-	const product = productDatas.find((product) => product._id === id);
-	res.json({
-		'data': product,
-	})
-});
+productRouter.get('/', getProducts);
+productRouter.get('/:id', getProductByid);
 
 export default productRouter;
 

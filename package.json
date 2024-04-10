@@ -6,13 +6,20 @@
   "type": "module",
   "scripts": {
     "start": "nodemon index.js",
+    "data:import": "node ./data/seeder.js",
+    "data:destory": "node ./data/seeder.js -d",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2"
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.3.1"
   },
   "devDependencies": {
     "dotenv": "^16.4.5",
